@@ -26,7 +26,7 @@ body {
 }
 
 a {
-  color: #4572FF;
+  color: #f7484e;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -97,9 +97,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #4572FF;
+  background: #f7484e;
   color: #fff;
-  border: 2px solid #4572FF;
+  border: 2px solid #f7484e;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #ffb31a !important;
@@ -107,11 +107,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #4572FF;
-  border: 2px solid #4572FF;
+  color: #f7484e;
+  border: 2px solid #f7484e;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #4572FF;
+  background: #f7484e;
   color: #fff;
 }
 
@@ -399,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.3);
-  color: #4572FF;
+  color: #f7484e;
 }
 @media screen and (max-width: 480px) {
   .btn-next a i {
@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 .btn-next a:hover i {
-  color: #4572FF;
+  color: #f7484e;
 }
 
 .fh5co-bio-photo img {
@@ -792,7 +792,7 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 50%;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
-  background: #4572FF;
+  background: #f7484e;
 }
 
 .flexslider {
