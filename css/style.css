@@ -975,3 +975,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #f7484e url("images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
