@@ -1,0 +1,25 @@
+{
+      "Project1": [
+            {
+                  "title": "Ice Ice Baby",
+                  "project-description": "Worked in a team environment of three while designing and creating an automated snow cone making machine.",
+                  "project-image": "";
+                  "process": "This project was created during the University of Michigan Hackathon. Built an Android application to communicate with a Raspberry Pi to control the dispensing of the syrup flavor(s). Designed 3D model of various parts for the machine. The project came in the top 10 and was named second best hardware hack.";
+                  "technologies": "";
+                  "youtube-url": "https://www.youtube.com/watch?v=UgkhepxST-Q"
+            }
+               ]
+}
+
+{
+      "Project2": [
+            {
+                  "title": "Headshot",
+                  "project-description": "Worked in a team environment of three while designing and creating an automated nerf gun.",
+                  "project-image": "";
+                  "process": "This project was created during the McGill University Hackathon in 2016.";
+                  "technologies": "Photon. Servos. Android. Facial Recognition.";
+                  "youtube-url": "https://www.youtube.com/watch?v=vuJV_JbXhU4"
+            }
+               ]
+}
