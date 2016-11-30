@@ -1889,28 +1889,28 @@
 .icon-balance-scale:before {
 	content: "\f24e";
 }
-.icon-hourglass-o:before {
+.icon-gears-o:before {
 	content: "\f250";
 }
-.icon-hourglass-1:before {
+.icon-gears-1:before {
 	content: "\f251";
 }
-.icon-hourglass-start:before {
+.icon-gears-start:before {
 	content: "\f251";
 }
-.icon-hourglass-2:before {
+.icon-gears-2:before {
 	content: "\f252";
 }
-.icon-hourglass-half:before {
+.icon-gears-half:before {
 	content: "\f252";
 }
-.icon-hourglass-3:before {
+.icon-gears-3:before {
 	content: "\f253";
 }
-.icon-hourglass-end:before {
+.icon-gears-end:before {
 	content: "\f253";
 }
-.icon-hourglass:before {
+.icon-gears:before {
 	content: "\f254";
 }
 .icon-hand-grab-o:before {
@@ -2435,4 +2435,3 @@
 .icon-ellipsis:before {
 	content: "\e129";
 }
-
