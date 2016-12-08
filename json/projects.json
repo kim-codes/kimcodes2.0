@@ -1,0 +1,24 @@
+{
+ "Projects": [
+    {
+      "title": "Ice Ice Baby",
+      "intro": "January 14",
+      "projImg": "",
+      "process": "This project was created during the University of Michigan Hackathon. Built an Android application to communicate with a Raspberry Pi to control the dispensing of the syrup flavor(s). Designed 3D model of various parts for the machine. The project came in the top 10 and was named second best hardware hack.",
+      "technologies": [
+              {"Android Studio, 3D Modeling, Raspberry pi, Java, Python"}
+            ],
+      "youtubeURL": "https://www.youtube.com/watch?v=UgkhepxST-Q",
+      "devpostURL": "https://devpost.com/software/ice-ice-baby-byp4xr"
+    },
+    {
+      "title": "Headshot",
+      "intro": "Nerf gun meets 2016 - with the use of facial recognition the nerf gun is able to spot a face and shoot at it.",
+      "projImg": "",
+      "process": "This project was created during the 2016 McHacks hackathon. Sends a signal to the Particle Photon and triggers the rotation of the motor. The motor is then able to pull on a string with is attached to the trigger of the gun, at which point the nerf ball is released and the shot is fired!",
+      "technologies": "Particle Photon, Servos, Android's Native Facial Recognition API, C/C++",
+      "youtubeURL": "https://www.youtube.com/watch?v=vuJV_JbXhU4",
+      "devpostURL": "https://devpost.com/software/head-shot"
+      }
+    ]
+}
