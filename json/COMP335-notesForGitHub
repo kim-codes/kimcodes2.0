@@ -1,0 +1,300 @@
+Q) Given any regular language <i>L</i> and any string <i>w</i> in the alphabet, how can we check if w memberof L
+A) Make a DFA that accepts <i>L</i> and check if <i>w</i> is accepted
+
+Q) Given any regular language <i>L</i>, how can we check if L = EMPTY SET (L is empty)
+A) Take DFA <i>M</i> that accepts L. Check if there exists a path from initial to final state.
+
+Q) Given a regular language <i>L</i> how can we check if it is finite?
+A) Make a DFA that accepts <i>L</i>, check if there exists a walk between initial and final state.
+
+Q) L1 and L2 are regular languages, check if L1 = L2
+A) Check (L1 union L2 complement ) union (L1 complement intersection L2) = empty set
+
+Fixed-Point Theorem
+
+Fixed-Point Theorem can be used to convert regular grammars to regular expressions.
+
+Let 𝛼 and 𝛽 be regular expressions. Then,
+𝑋 = 𝛼∗𝛽 is a solution to the regular expression 𝑋 = 𝛼𝑋 + 𝛽
+
+Find the regular expression corresponding for the following grammar.
+
+<!-- insert photos -->
+
+Non-Regular Languages
+{a^nb^n:n >=0}
+{vv^R: V isMemberOf{a,b}*}
+
+
+______________________________________________
+
+Context-Free Languages
+
+Context Free Languages are expressed by Context Free Grammars (CFGs)
+
+Formalities
+
+```
+Grammar G = (V,T,S,P)
+   V = variables
+   T = terminal symbols
+   S = start variable
+   P =  productions of the form A --> x (variable to string of variables and terminals)
+```
+
+A language if context free if and only if there is a context-free grammar G with L=L(G)
+___________________
+
+A grammar is ambiguous if there is more than 1 derivation tree for it.
+formal: A context-free grammar G is ambiguous if there exists a string w in L(G) with two or more distinct derivation trees
+
+--> Ambiguity of a grammar G implies existence of two or more leftmost (or rightmost) derivations
+
+Ambiguity is not desired for programming languages because it may result in different meanings of an expression
+
+Sometimes we can fix ambiguity
+
+Some context-free languages have only ambiguous grammars
+
+_______________
+
+Simplifying Context-Free Grammars
+- removing null
+
+unit production = single variable at each side
+A --> B
+
+removing useless productions
+
+1st: find every variable that produces strings with only terminals
+Keep only the variables that produce terminal symbols
+2nd: Find all the variables that are reachable from S (Dependency Graph)
+Keep only the variables reachable from S
+
+Removing Undesired Productions
+Step 1: remove nullable variables and lambda-productions
+Step 2: Remove Unit-productions
+Step 3: Remove Useless productions
+ORDER HERE IS IMPORTANT FOLLOW 1-->2-->3 OKAY. KAAY.
+
+_____________________________
+
+Chomsky Normal Form
+
+Chomsky normal forms are good for parsing and proving theorems
+
+<!-- insert image -->
+
+Conversion to Chomsky Normal Form
+
+1. Introduce variables for terminals: Ta, Tb, Tc
+
+<!-- insert conversion 1 -->
+
+2. Introduce intermediate variables: V1, V2
+
+<!-- insert conversion 2 -->
+
+3.  Put the grammar in Chomsky Normal Form
+
+For any context-free grammar (which doesn’t produce lambda ) there is an equivalent grammar in Chomsky Normal Form.
+
+____________________________________________
+
+Greibach Normal Form
+
+Greibach normal forms are very good for parsing
+
+For any context-free grammar (which doesn’t produce lambda) there is an equivalent grammar in Greibach Normal Form
+
+________________________________
+
+PDA pushdown automaton
+
+A PDA is an enhanced ifnite automaton that also contains an infinite stack.
+
+The transitions in PDA are of the form a, x --> y
+if there is an a in the input string and the stack contains the symbol x on top and you remove the x and add a y
+(stack gives us power to recognize non-regular languages)
+
+if it is a, epsilon --> c, then there is no replacement and you just push c
+
+if it is a, b --> epsilon then we just pop b
+
+if it is a, epsilon --> epsilon then no change
+
+[ EPSILON OR LAMBDA - DEPENDSO N EXAMPLE ]
+
+if automaton attempts to pop from an empty stack then it halts and rejects input
+
+a PDA {a^nb^n : n >=0}
+
+
+formalities:
+
+NPDA
+
+M = (Q, Σ, Γ, ,q0, z, F)
+  Q = states
+  Σ = input alphabet
+  Γ = stack alphabet
+   = transition function
+  q0 = initial state
+  z = stack end symbol
+  F = final state
+
+Instantaneous Description (ID)
+
+(q, v, u)
+q = current state of PDA
+v = remaining unread part of input string
+u = current stack contents
+
+____________________________
+
+Given any context-free language  L, expressed by a context-free grammar  G, there exists an NPDA M that accepts L,
+
+Converting CFG <i>G</i> to PDA <i>M</i>
+
+<i>M</i> simulates leftmost derivations of <i>G</i>
+
+<!-- next  -->
+
+Converting NPDA <i>M</i> to CFG <i>G</i>
+
+The grammar G simulates the computation of M
+
+Modifications (if necessary)
+1.  Modify the PDA so that the stack is never empty during computation
+e.i. Introduce the new symbol # to mark the bottom of the stack
+so at the beginning, insert # into the stack
+Convert all transitions so that after popping $ the automaton halts
+2. Modify the PDA so that at end, it empties stack and has one unique accept state
+3. Modify the PDA so that it has no transitions popping lambda
+
+___________________________
+
+DPDA
+
+The language L(M) = {a^nb^n : n >= 0} is deterministic context-free
+
+L is a deterministic context-free language if there exists some DPDA that accepts it
+
+NPDAs (Non-DPDA) are more powerful than DPDA
+
+Every DPDA is also a NPDA
+
+It is possible for a language to be context-free and no deterministic context-free
+
+<!-- insert example contextfree-NotDeterministic -->
+
+First assume it is a deterministic CFL, meaning there exists a DPDA <i>M</i> that accepts <i>L</i>
+use pumping lemma to show {a^nb^nc^n : n >= 0} is not context-free
+so we have a contradiction
+
+____________________________________
+
+Closure properties of context-free language
+- Union (L1 U l2) if both are context-free then the union of them both is context-free
+- Concatenation of 2 context-free languages is a context-free language
+- L is context-free then L* is context free
+
+Not under closure
+- intersection of two context-free languages
+- complement of a context-free language is not necessarily context-free
+
+---
+
+Intersection of a context-free language and a regular language = context-free language (example in L16,20)
+
+____________________________
+
+Turing Machine (TM)
+- tape:> no boundaries, use as many cells as needed
+- read/write head: moves 1 to the left or 1 to the right at a time
+
+Each step of the TM computation:
+1. reads symbol in the cell at the head
+2. replaces that symbol with a symbol
+3. moves 1 cell to the Left or 1 to the Right
+By convention, TM begins its execution with the R/W head  under the leftmost symbol of the input tape
+
+Note: the input string is never empty! We just have blank symbols
+
+Turing Machines are deterministic
+<br> No lambda transitions allowed
+<!-- insert image deterministic -->
+
+Final states have no outgoing transitions
+In a final state, the TM halts
+
+Accepted input = TM halts in a final state
+Rejected input = TM halts in non-final state or it enters an infinite-loop
+
+<!-- insert turing machine examples -->
+
+Formalities:
+M = (Q, , , q0, diamond, F)
+  Q = states
+    = input alphabet
+    = tape alphabet
+    = transition function
+    = initial state
+    = Blank in
+  F = final states
+
+Standard Turing Machines
+- deterministic
+- infinite tape in both directions
+- tape is input/output file
+
+_________________________________________
+
+Standard Model of TM
+• Stay-Option
+• Semi-Infinite Tape
+• Off-Line
+• Multitape
+• Multidimensional
+• Nondeterministic
+
+Same Power of two classes means: Both classes of Turing machines accept the same languages
+To prove same power: simulate the machine of one class with a machine of the other class
+
+So the Simulation Machine and the Original Machine accept the same language
+
+Turing Machines with Stay-Option = the head can stay in the same position
+
+Stay-Option Machines have the same power with Standard Turing machines
+a Standard machine is also a Stay-Option machine (just never uses the S move)
+a standard machine can simulate a Stay-Option machine
+
+Standard Machine--Multiple Track Tape
+
+The Off-Line Machine
+1.  Copy input file to tape
+2.  Continue computation as in Standard Turing machine
+
+Use a Standard machine with four track tape to keep track of the Off-line input file and tape contents
+1 track = input, 2nd = head position for that input track
+3rd track = tape, 4th = head position for that 3rd tape track
+
+Note: Same power doesn’t imply same speed
+
+MultiDimensional Turing Machines
+Standard machines simulate Multidimensional machines by using a two track tape. Track 1 contains the symbols and track 2 contains the coordinates.
+
+NonDeterministic Turing Machines
+
+Every deterministic machine  is also a nondeterministic machine
+
+--
+
+Limitation of Turing Machines=> the are 'hardwired' only execute one program
+Solution = Universal Turing Machine!
+- reprogrammable machine, simulates any other Turing Machine
+Inputs for Universal Turing Machine
+1. description of transitions of M
+2. Initial tape contents of M
+
+Theorem : the set of all Turing machines forms a  language where each string of the  language is the binary encoding of  a Turing Machine
